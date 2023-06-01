@@ -22,7 +22,7 @@ public:
         m_hwnd = 0;
     }
     ~WaitForExitImpl() { 
-        Destroy(); 
+        SendClose(); 
         impl_counter--;          
     }
 
@@ -44,6 +44,12 @@ public:
         m_hwnd = CreateWindowExA(0, pszClassName, pszWindowName, 0, 0, 0, 0, 0, HWND_MESSAGE, NULL, GetModuleHandleA(NULL), this);
         BOOL res = (m_hwnd != NULL);
         return res;
+    }
+
+    void SendClose()
+    {
+        if (m_hwnd == NULL) return;
+        PostMessageA(m_hwnd, WM_CLOSE, 0, 0);
     }
 
     // Destroy the message window
@@ -154,9 +160,10 @@ CWaitForExit::CWaitForExit()
 std::thread wait_exit_thread;
 CWaitForExit::~CWaitForExit()
 {
-    delete impl;
+    impl->SendClose();
     if (wait_exit_thread.joinable())
         wait_exit_thread.join();
+    delete impl;
     
 }
 

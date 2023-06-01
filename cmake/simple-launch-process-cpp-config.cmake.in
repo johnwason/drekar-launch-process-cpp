@@ -1,0 +1,22 @@
+# - Config file for the simple-launch-process-cpp package
+# It defines the following variables
+#  SIMPLE_LAUNCH_PROCESS_CPP_INCLUDE_DIR       - include directory
+#  SIMPLE_LAUNCH_PROCESS_CPP_LIBRARY_DIR       - directory containing libraries
+#  SIMPLE_LAUNCH_PROCESS_CPP_SHARED_LIBS_BUILT - whether we have built shared libraries or not
+#  SIMPLE_LAUNCH_PROCESS_CPP_LIBRARIES         - libraries to link against
+
+@PACKAGE_INIT@
+
+set_and_check(SIMPLE_LAUNCH_PROCESS_CPP_INCLUDE_DIR "@PACKAGE_CMAKE_INSTALL_INCLUDEDIR@")
+set_and_check(SIMPLE_LAUNCH_PROCESS_CPP_LIBRARY_DIR "@PACKAGE_CMAKE_INSTALL_LIBDIR@")
+
+# Are we building shared libraries?
+set(SIMPLE_LAUNCH_PROCESS_CPP_SHARED_LIBS_BUILT "@PACKAGE_BUILD_SHARED_LIBS@")
+
+# Our library dependencies (contains definitions for IMPORTED targets)
+include(@PACKAGE_CONFIG_EXPORT_DIR@/simple-launch-process-cpp-targets.cmake)
+
+# These are IMPORTED targets created by simple-launch-process-cpp-targets.cmake
+set(SIMPLE_LAUNCH_PROCESS_CPP_LIBRARIES "simple-launch-process-cpp")
+
+check_required_components(simple-launch-process-cpp)
