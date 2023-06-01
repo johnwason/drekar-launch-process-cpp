@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package format="2">
+    <name>simple_launch_process_cpp</name>
+    <version>0.1.0</version>
+    <description>C++ client for the simple-launch orchestractor</description>
+
+    <maintainer email="wason@wasontech.com">John Wason</maintainer>
+
+    <license>Apache 2.0</license>
+
+    <url type="website">https://github.com/johnwason/simple-launch-process-cpp</url>
+    <author email="wason@wasontech.com">John Wason</author>
+
+    <export>
+        <build_tool>cmake</build_tool>
+    </export>
+</package>
