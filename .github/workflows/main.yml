@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+  release:
+    types:
+      - created
+  workflow_dispatch:
+
+jobs:
+  ubuntu_test:
+    strategy:
+      matrix:
+        runs-on: [ubuntu-20.04, ubuntu-22.04]
+    runs-on: ${{ matrix.runs-on }}
+    steps:
+    - uses: actions/checkout@v3
+    - name: apt
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y build-essential cmake 
+    - name: configure
+      run: |
+        mkdir build
+        cd build
+        cmake ..
+    - name: build
+      run: |
+        cd build
+        cmake --build .
+  windows_test:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: configure
+      run: |
+        mkdir build
+        cd build
+        cmake -G Ninja ..
+    - name: build
+      run: |
+        cd build
+        cmake --build .
+   
