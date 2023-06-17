@@ -180,7 +180,7 @@ bool CWaitForExit::CallbackWaitForExit(void (*exit_callback)())
 void CWaitForExit::WaitForExit()
 {
     // Create the message window
-    if (!impl->Create("drekar_launch_process", "drekar_launch_process"))
+    if (!impl->Create("drekar_message_window", "drekar_hidden_window"))
     {
         std::cerr << "Failed to create message window" << std::endl;
         return;
