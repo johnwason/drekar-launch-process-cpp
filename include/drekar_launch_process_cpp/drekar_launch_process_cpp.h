@@ -1,10 +1,10 @@
 
-#ifndef SIMPLE_LAUNCH_PROCESS_CPP_H
-#define SIMPLE_LAUNCH_PROCESS_CPP_H
+#ifndef DREKAR_LAUNCH_PROCESS_CPP_H
+#define DREKAR_LAUNCH_PROCESS_CPP_H
 
 #pragma once
 
-namespace simple_launch_process_cpp
+namespace drekar_launch_process_cpp
 {
     namespace detail
     {
@@ -22,4 +22,4 @@ namespace simple_launch_process_cpp
     };
 }
 
-#endif // SIMPLE_LAUNCH_PROCESS_CPP_H
+#endif // DREKAR_LAUNCH_PROCESS_CPP_H

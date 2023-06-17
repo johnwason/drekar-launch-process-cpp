@@ -1,0 +1,11 @@
+name: test_cpp_launch
+tasks:
+  - name: wait_exit
+    program: ./build/drekar-launch-process-cpp_wait_exit_test
+  - name: callback_exit
+    program: ./build/drekar-launch-process-cpp_callback_exit_test
+  - name: sleep
+    program: sleep
+    args: ["5"]
+    quit-on-terminate: true
+  

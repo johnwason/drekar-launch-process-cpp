@@ -3,10 +3,10 @@
 #include <thread>
 #include <assert.h>
 
-#include "simple_launch_process_cpp/simple_launch_process_cpp.h"
-// Create a class with a message only window and a simple message loop
+#include "drekar_launch_process_cpp/drekar_launch_process_cpp.h"
+// Create a class with a message only window and a drekar message loop
 
-namespace simple_launch_process_cpp
+namespace drekar_launch_process_cpp
 {
 namespace detail
 {
@@ -180,7 +180,7 @@ bool CWaitForExit::CallbackWaitForExit(void (*exit_callback)())
 void CWaitForExit::WaitForExit()
 {
     // Create the message window
-    if (!impl->Create("simple_launch_process", "simple_launch_process"))
+    if (!impl->Create("drekar_message_window", "drekar_hidden_window"))
     {
         std::cerr << "Failed to create message window" << std::endl;
         return;
