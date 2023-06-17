@@ -22,6 +22,7 @@ jobs:
         sudo apt-get install -y build-essential cmake python3-pip python3-setuptools python3-wheel
     - name: pip
       run: |
+        python3 -m pip install --upgrade pip
         python3 -m pip install --user git+https://github.com/johnwason/drekar-launch-process.git
         python3 -m pip install --user git+https://github.com/johnwason/drekar-launch.git
     - name: configure
