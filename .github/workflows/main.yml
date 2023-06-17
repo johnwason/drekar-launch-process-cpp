@@ -19,7 +19,11 @@ jobs:
     - name: apt
       run: |
         sudo apt-get update
-        sudo apt-get install -y build-essential cmake 
+        sudo apt-get install -y build-essential cmake python3-pip
+    - name: pip
+      run: |
+        python3 -m pip install --user git+https://github.com/johnwason/drekar-launch-process.git
+        python3 -m pip install --user git+https://github.com/johnwason/drekar-launch.git
     - name: configure
       run: |
         mkdir build
@@ -29,10 +33,17 @@ jobs:
       run: |
         cd build
         cmake --build .
+    - name: test
+      run: |
+        python3 -m drekar_launch --config=test/drekar-launch/drekar-launch.yaml
   windows_test:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v3
+    - name: pip
+      run: |
+        python -m pip install --user git+https://github.com/johnwason/drekar-launch-process.git
+        python -m pip install --user git+https://github.com/johnwason/drekar-launch.git
     - name: configure
       run: |
         mkdir build
@@ -42,4 +53,7 @@ jobs:
       run: |
         cd build
         cmake --build .
+    - name: test
+      run: |
+        python -m drekar_launch --config=test/drekar-launch/drekar-launch.yaml
    
