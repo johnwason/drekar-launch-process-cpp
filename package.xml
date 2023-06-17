@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <package format="2">
-    <name>simple_launch_process_cpp</name>
+    <name>drekar_launch_process_cpp</name>
     <version>0.1.0</version>
-    <description>C++ client for the simple-launch orchestractor</description>
+    <description>C++ client for the drekar-launch orchestractor</description>
 
     <maintainer email="wason@wasontech.com">John Wason</maintainer>
 
     <license>Apache 2.0</license>
 
-    <url type="website">https://github.com/johnwason/simple-launch-process-cpp</url>
+    <url type="website">https://github.com/johnwason/drekar-launch-process-cpp</url>
     <author email="wason@wasontech.com">John Wason</author>
 
     <export>

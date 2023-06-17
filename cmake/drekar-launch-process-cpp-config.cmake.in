@@ -1,0 +1,22 @@
+# - Config file for the drekar-launch-process-cpp package
+# It defines the following variables
+#  DREKAR_LAUNCH_PROCESS_CPP_INCLUDE_DIR       - include directory
+#  DREKAR_LAUNCH_PROCESS_CPP_LIBRARY_DIR       - directory containing libraries
+#  DREKAR_LAUNCH_PROCESS_CPP_SHARED_LIBS_BUILT - whether we have built shared libraries or not
+#  DREKAR_LAUNCH_PROCESS_CPP_LIBRARIES         - libraries to link against
+
+@PACKAGE_INIT@
+
+set_and_check(DREKAR_LAUNCH_PROCESS_CPP_INCLUDE_DIR "@PACKAGE_CMAKE_INSTALL_INCLUDEDIR@")
+set_and_check(DREKAR_LAUNCH_PROCESS_CPP_LIBRARY_DIR "@PACKAGE_CMAKE_INSTALL_LIBDIR@")
+
+# Are we building shared libraries?
+set(DREKAR_LAUNCH_PROCESS_CPP_SHARED_LIBS_BUILT "@PACKAGE_BUILD_SHARED_LIBS@")
+
+# Our library dependencies (contains definitions for IMPORTED targets)
+include(${CMAKE_CURRENT_LIST_DIR}/drekar-launch-process-cpp-targets.cmake)
+
+# These are IMPORTED targets created by drekar-launch-process-cpp-targets.cmake
+set(DREKAR_LAUNCH_PROCESS_CPP_LIBRARIES "drekar-launch-process-cpp")
+
+check_required_components(drekar-launch-process-cpp)

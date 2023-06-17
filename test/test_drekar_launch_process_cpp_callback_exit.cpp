@@ -1,4 +1,4 @@
-#include "simple_launch_process_cpp/simple_launch_process_cpp.h"
+#include "drekar_launch_process_cpp/drekar_launch_process_cpp.h"
 #include <iostream>
 #include <condition_variable>
 #include <functional>
@@ -16,7 +16,7 @@ void exit_callback()
 
 int main()
 {
-    simple_launch_process_cpp::CWaitForExit wait_for_exit;
+    drekar_launch_process_cpp::CWaitForExit wait_for_exit;
     wait_for_exit.CallbackWaitForExit(exit_callback);
     std::unique_lock<std::mutex> lock(cv_mutex);
     std::cout << "Press Ctrl+C to exit" << std::endl;

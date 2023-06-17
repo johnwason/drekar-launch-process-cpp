@@ -1,10 +1,10 @@
 #include <signal.h>
 #include <assert.h>
-#include "simple_launch_process_cpp/simple_launch_process_cpp.h"
+#include "drekar_launch_process_cpp/drekar_launch_process_cpp.h"
 #include <condition_variable>
 #include <iostream>
 
-namespace simple_launch_process_cpp
+namespace drekar_launch_process_cpp
 {
 namespace detail
 {
