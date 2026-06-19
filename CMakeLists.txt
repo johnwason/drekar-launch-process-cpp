@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.3)
+cmake_minimum_required(VERSION 3.3...3.99)
 
 FILE (STRINGS "${CMAKE_CURRENT_SOURCE_DIR}/package.xml" lib_version1 REGEX "<version>[0-9]+\\.[0-9]+\\.[0-9]+</version>")
 IF ("${lib_version1}" STREQUAL "" )
